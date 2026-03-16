@@ -1,0 +1,36 @@
+cat > .gitignore << 'EOF'
+# Бинарники и сборка
+main
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/vendor/
+
+# Базы данных и временные файлы
+*.db
+*.sqlite
+*.sqlite3
+metadata.db
+
+# Логи
+*.log
+logs/
+
+# Конфиги с паролями (опционально)
+# configs/config.yaml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker volumes
+mosquitto/data/
+mosquitto/log/
+
+# Go
+/go.sum
+EOF

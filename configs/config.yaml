@@ -1,0 +1,29 @@
+server:
+  host: "0.0.0.0"
+  port: 8080
+  health_endpoint: "/health"
+
+mqtt:
+  broker: "tcp://mosquitto:1883"
+  client_id: "telemetry-backend"
+  username: ""
+  password: ""
+  topics:
+    - "telemetry/+/sensor"
+  qos: 1
+  reconnect_retry: 5
+
+influxdb:
+  url: "http://influxdb:8086" 
+  token: "my-super-secret-auth-token"
+  org: "my-org"
+  bucket: "telemetry"
+  retention_days: 90
+
+logger:
+  level: "debug"
+  format: "console"
+
+jwt:
+  secret: "your-super-secret-jwt-key-change-in-production"
+  expiration: 24
