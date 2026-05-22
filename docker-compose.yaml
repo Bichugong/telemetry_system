@@ -36,6 +36,13 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SMTP_ENABLED=true
+      - GF_SMTP_HOST=smtp.gmail.com:587
+      - GF_SMTP_USER=rysev.sergey@gmail.com
+      - GF_SMTP_PASSWORD=kishduvlqjfxtwcp
+      - GF_SMTP_FROM_ADDRESS=rysev.sergey@gmail.com
+      - GF_SMTP_FROM_NAME=Grafana Alerts
+      - GF_SMTP_SKIP_VERIFY=false
     volumes:
       - grafana-data:/var/lib/grafana
     depends_on:

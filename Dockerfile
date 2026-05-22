@@ -25,7 +25,7 @@ RUN CGO_ENABLED=1 GOOS=linux go build \
     -ldflags="-w -s -extldflags '-static'" \
     -o main ./cmd/server
 
-# Stage 2: Minimal runtime image
+# Minimal runtime image
 FROM debian:bullseye-slim
 
 RUN apt-get update && apt-get install -y \
